@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\Api\V1\ServiceController;
 use App\Http\Controllers\Api\V1\ProfessionalController;
+use App\Http\Controllers\Api\V1\RequeteController;
+use App\Http\Controllers\Api\V1\AbonnementController;
 use App\Http\Controllers\Api\V1\JobsController;
 use App\Http\Controllers\Api\V1\CompleteServiceController;
 use Illuminate\Http\Request;
@@ -66,7 +68,7 @@ Route::prefix('/professionals')
     /*pour les requêtes(reservation et service personalisé) sm_requete*/
 
     Route::prefix('/requete')
-    ->controller(JobsController::class)
+    ->controller(RequeteController::class)
     ->name('requete.')
     ->group(function () {
         Route::get('/', 'index');
