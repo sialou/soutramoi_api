@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->boolean('is-completed')->default(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('services')) {
+            Schema::create('services', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('name');
+                $table->tinyInteger('is_completed')->default(0);
+                $table->timestamps();
+            });
+        }
     }
 
     /**

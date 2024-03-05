@@ -27,10 +27,7 @@ use Throwable;
 
 class RequeteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(int $id = null)
     {
         $response = ResponseSchema::create();
 
@@ -49,53 +46,5 @@ class RequeteController extends Controller
 
        // return $response->send();
        return response()->json($response);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreRequeteRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Requete $requete)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Requete $requete)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateRequeteRequest $request, Requete $requete)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Requete $requete)
-    {
-        //
     }
 }
