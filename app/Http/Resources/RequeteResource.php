@@ -14,6 +14,17 @@ class RequeteResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+       // return parent::toArray($request);
+       return[
+        'id' => $this ->id,
+        'created_at' => $this ->creat_at,
+        'user_id' => $this ->user_id,
+        'job_id' => $this ->job_id,
+        'hour' => $this ->hour,
+        'day' => $this ->day,
+        'type' => $this ->type,
+        'description' => $this ->description
+       ];
+
     }
 }

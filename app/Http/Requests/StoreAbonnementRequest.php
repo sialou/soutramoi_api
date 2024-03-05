@@ -11,7 +11,7 @@ class StoreAbonnementRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreAbonnementRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'type_abonnement'=>'required|string|max:255',
+            'user_id'=>'int',
+            'job_id'=>'int'
         ];
     }
 }

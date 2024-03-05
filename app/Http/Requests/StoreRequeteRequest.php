@@ -11,7 +11,7 @@ class StoreRequeteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,8 @@ class StoreRequeteRequest extends FormRequest
     {
         return [
             //
+            'type'=>'required|string|max:255',
+            'description'=>'required|string'
         ];
     }
 }

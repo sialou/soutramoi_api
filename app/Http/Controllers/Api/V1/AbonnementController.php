@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\ServiceResource;
+use App\Http\Resources\AbonnementResource;
 use App\Helpers\ResponseSchema;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
@@ -19,6 +20,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\Service;
 use App\Models\Job;
+use App\Http\Requests\StoreAbonnementRequest;
 //use Horizom\Http\Request;
 use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
@@ -32,23 +34,24 @@ class AbonnementController extends Controller
      */
     public function index()
     {
-      return Abonnement::all();
+      return AbonnementResource:: collection(Abonnement::all());
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+   /* public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreAbonnementRequest $request)
     {
-        //
+        $abonnement= Abonnement ::create($request->validated());
+        return AbonnementResource::make($abonnement);
     }
 
     /**
@@ -57,6 +60,7 @@ class AbonnementController extends Controller
     public function show(Abonnement $abonnement)
     {
         //
+        return AbonnementResource:: make($abonnement);
     }
 
     /**

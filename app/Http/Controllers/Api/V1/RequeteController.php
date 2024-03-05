@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\ServiceResource;
 use App\Helpers\ResponseSchema;
+use App\Http\Resources\RequeteResource;
+use App\Http\Requests\StoreRequeteRequest;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Models\Review;
@@ -32,16 +34,16 @@ class RequeteController extends Controller
      */
     public function index()
     {
-        return Requete::all();
+        return RequeteResource:: collection(Requete::all());
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+  /*  public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -49,6 +51,8 @@ class RequeteController extends Controller
     public function store(StoreRequeteRequest $request)
     {
         //
+        $resource= Resource ::create($request->validated());
+        return  RequeteResource::make($resource);
     }
 
     /**
@@ -57,6 +61,8 @@ class RequeteController extends Controller
     public function show(Requete $requete)
     {
         //
+
+        return RequeteResource::  make($Requete);
     }
 
     /**

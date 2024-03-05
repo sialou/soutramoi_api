@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Abonnement extends Model
 {
     use HasFactory;
+
+    protected $fillable=['type_abonnement', 'user_id', 'job_id'];
+
 }
