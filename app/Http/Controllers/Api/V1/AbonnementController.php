@@ -32,24 +32,7 @@ class AbonnementController extends Controller
      */
     public function index()
     {
-        $response = ResponseSchema::create();
-
-        if ($id) {
-            //$item = Abonnement::where('id', $id)->active()->first();
-            $item = Abonnement::where('id', $id)->first();
-
-            if (empty($item)) {
-                return $response->error(404, 'not_found', "Donnée introuvable.");
-            }
-
-            $response->result = $item;
-        } else {
-           // $response->result = Abonnement::active()->get()->all();
-            $response->result = Abonnement::all();
-        }
-
-       // return $response->send();
-       return response()->json($response);
+      return Abonnement::all();
     }
 
     /**

@@ -32,23 +32,7 @@ class RequeteController extends Controller
      */
     public function index()
     {
-        $response = ResponseSchema::create();
-
-        if ($id) {
-            //$item = Requete::where('id', $id)->active()->first();
-            $item = Requete::where('id', $id)->first();
-
-            if (empty($item)) {
-                return $response->error(404, 'not_found', "Donnée introuvable.");
-            }
-
-            $response->result = $item;
-        } else {
-            $response->result = Requete::all();
-        }
-
-       // return $response->send();
-       return response()->json($response);
+        return Requete::all();
     }
 
     /**
