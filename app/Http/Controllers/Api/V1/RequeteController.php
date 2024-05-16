@@ -51,8 +51,10 @@ class RequeteController extends Controller
     public function store(StoreRequeteRequest $request)
     {
         //
-        $resource= Resource ::create($request->validated());
-        return  RequeteResource::make($resource);
+       /* $resource= Resource ::create($request->validated());
+        return  RequeteResource::make($resource);*/
+        $requete= Requete ::create($request->validated());
+        return RequeteResource::make($requete);
     }
 
     /**

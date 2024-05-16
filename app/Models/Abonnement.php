@@ -9,6 +9,6 @@ class Abonnement extends Model
 {
     use HasFactory;
 
-    protected $fillable=['type_abonnement', 'user_id', 'job_id'];
+    protected $fillable=['type_abonnement', 'user_id', 'job_id', 'created_at'];
 
 }

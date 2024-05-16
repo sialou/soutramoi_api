@@ -9,6 +9,7 @@ class Requete extends Model
 {
     use HasFactory;
 
-    protected $fillable=['type','description'];
+    protected $fillable=['user_id',	'job_id',	'hour',	'day',	'type',	'description',	'created_at'];
+
 
 }
