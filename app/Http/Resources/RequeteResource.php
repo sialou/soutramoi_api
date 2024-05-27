@@ -23,7 +23,11 @@ class RequeteResource extends JsonResource
         'hour' => $this ->hour,
         'day' => $this ->day,
         'type' => $this ->type,
-        'description' => $this ->description
+        'description' => $this ->description,
+        'name' => $this ->name,
+        'service' => $this ->service,
+        'ville' => $this ->ville,
+        'commune' => $this ->commune
        ];
 
     }

@@ -28,7 +28,11 @@ class StoreRequeteRequest extends FormRequest
             'user_id'=>'int',
             'job_id'=>'int',
             'hour'=>'required|string',
-            'day'=>'required|string'
+            'day'=>'required|string',
+            'name'=>'required|string',
+            'service'=>'required|string',
+            'ville'=>'required|string',
+            'commune'=>'required|string'
         ];
     }
 }
